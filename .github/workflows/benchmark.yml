@@ -20,7 +20,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: ['ubuntu-latest', 'macos-latest', 'windows-latest', 'ubuntu-24.04-s390x']
+        os: ['ubuntu-latest', 'macos-latest', 'windows-latest', 'linux-s390x']
         ruby-version: ['4.0']
 
     name: Ruby ${{ matrix.ruby-version }} on ${{ matrix.os }}
