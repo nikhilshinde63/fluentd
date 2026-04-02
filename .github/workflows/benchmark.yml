@@ -42,7 +42,7 @@ jobs:
 
       - name: Install dependencies
         run:  |
-          gem install bundler
+          sudo gem install bundler
           bundle install
       - name: Run Benchmark
         shell: bash # Ensure to use bash shell on all platforms
