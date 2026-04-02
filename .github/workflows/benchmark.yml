@@ -41,9 +41,17 @@ jobs:
           gem --version
 
       - name: Install dependencies
+        if: matrix.os != 'linux-s390x'
+        run: |
+          bundle install
+      
+      - name: Install dependencies (s390x)
+        if: matrix.os == 'linux-s390x'
         run:  |
           sudo gem install bundler
           sudo bundle install
+
+          
       - name: Run Benchmark
         shell: bash # Ensure to use bash shell on all platforms
         run: |
